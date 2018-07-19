@@ -1,0 +1,164 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: "segoue",sans-serif;
+	line-height: 1.6em;
+	color: #666;
+	background-image: url('http://assets1.ignimgs.com/2016/04/27/untitled-3jpg-684c55_1280w.jpg');
+	position: absolute;
+}
+
+a {
+	color: #333;
+	text-decoration: none;
+
+}
+
+.clearfix {
+	clear: both;
+}
+
+header {
+	padding: 30px 20px;
+	background: #f4f4f4;
+	opacity: 0.5;
+	width: auto;
+}
+
+header h1 {
+	color: #000;
+	margin-bottom: 5px;
+}
+
+section h1 {
+	color: black;
+}
+
+header span {
+	color: #dd2826;
+}
+
+section {
+	padding:30px 20px 20px 20px;
+	border: solid black 2px;
+	margin-bottom: 10px;
+
+}
+
+footer {
+	padding: 20px;
+	background: #f4f4f4;
+	text-align: center;
+
+}
+
+#search-form {
+	display: block;
+	margin-bottom: 15px;
+}
+
+.fieldcontainer {
+	display: block;
+	position: relative;
+	width: 90%;
+	margin: 0 auto;
+}
+
+
+.search-field{
+	box-sizing: border-box;
+	display: block;
+	width: 45%;
+	padding: 11px 7px;
+	padding-right: 43px;
+	background: #fff;
+	color: #ccc;
+	border:1px solid #c8c8c8;
+	font-size: 1.6em;
+	border-bottom-color: #d2e2e7;
+	border-radius: 1px;
+	box-shadow: inset 0 1px 2px rgba(0,0,0,0.1), 0 0 0 6px #f0f0f0;
+
+}
+
+
+#search-btn {
+	position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px;
+    opacity: 0;
+
+}
+#search-btn:hover {
+	opacity: 0.8;
+}
+
+#results li {
+	padding: 10px 0;
+	border-bottom: 1px #ccc dotted;
+	list-style: none;
+	overflow: auto;
+	background: rgba(255, 255, 255, .6);
+	border-radius: 5px;
+	margin-bottom: 5px;
+
+
+	
+}
+
+.list-left{
+	float: left;
+	width: 20%;
+}
+
+.list-left img {
+	border:solid #ccc 1px;
+	width: 100%;
+	padding: 3px;
+}
+
+.list-right{
+	float: right;
+	width: 78%;
+	color: red;
+	text-shadow: black;
+}
+
+.cTitle {
+	color:#dd2826;
+}
+
+.button-container {
+	margin-top: 25px;
+}
+
+.paging-button {
+	background: #f4f4f4;
+	padding: 8px 13px;
+	border:#ccc 1px solid;
+	border-radius: 5px;
+	color: #333;
+	margin:10px;
+	cursor: pointer;
+}
+
+
+@media only screen and (max-width: 411px) {
+
+#container {
+	width: 740px;
+	background: #fff;
+	margin: auto;
+}
+}
+
+
+
+
+
+
+
