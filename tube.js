@@ -97,10 +97,10 @@ function topHeadlines () {
     console.log(data)
 
     $.each(data.articles, function (i, item){
-          var output = getOutput(item);
+          var output2 = getOutput(item);
 
           //display results
-          $('#topHeadlines').append(output);
+          $('#topHeadlines').append(output2);
         })
     })
   }
@@ -110,89 +110,6 @@ function topHeadlines () {
 const ignAPI = '825aa5625d1346c996c1b5ff68efbba3';
 
   
-
-
-
-// used to change pages of results
-function nextPage () {
-  var token = $('#next-button').data('token');
-  var q = $('#next-button').data('query');
-
-  $('#results').html('');
-  $('#buttons').html('');
-
-  // this is information placed in search
-
-  q = $('#query').val();
-
-  // use GET for API information
-  $.get(
-    "https://www.googleapis.com/youtube/v3/search",{
-      part:'snippet, id',
-      q:q,
-      pageToken: token,
-      type:'video',
-      key:'AIzaSyDJr1oj1Q_dVAAqu-ftjJ-WsRT3huKG9LQ'},
-      function (data){
-        var nextPageToken = data.nextPageToken;
-        var prevPageToken = data.prevPageToken;
-
-        console.log(data);
-        // looping through each result in the JSON
-        $.each(data.items, function (i, item){
-          var output = getOutput(item);
-
-          //display results
-          $('#results').append(output);
-        });
-        var buttons = getButtons(prevPageToken,nextPageToken);
-
-        // display buttons for mor results
-        $('#buttons').append(buttons);
-      }
-  );
-}
-
-//allows the page to go back to prev page
-
-function prevPage () {
-  var token = $('#prev-button').data('token');
-  var q = $('#prev-button').data('query');
-
-  $('#results').html('');
-  $('#buttons').html('');
-
-  // this is information placed in search
-
-  q = $('#query').val();
-
-  // use GET for API information
-  $.get(
-    "https://www.googleapis.com/youtube/v3/search",{
-      part:'snippet, id',
-      q:q,
-      pageToken: token,
-      type:'video',
-      key:'AIzaSyDJr1oj1Q_dVAAqu-ftjJ-WsRT3huKG9LQ'},
-      function (data){
-        var nextPageToken = data.nextPageToken;
-        var prevPageToken = data.prevPageToken;
-
-        console.log(data);
-        // looping through each result in the JSON
-        $.each(data.items, function (i, item){
-          var output = getOutput(item);
-
-          //display results
-          $('#results').append(output);
-        });
-        var buttons = getButtons(prevPageToken,nextPageToken);
-
-        // display buttons for mor results
-        $('#buttons').append(buttons);
-      }
-  );
-}
 // build the results or output
 //var for each piece that will be used in the results
 
@@ -220,6 +137,20 @@ function getOutput(item) {
 
   return output;
 
+var output2 = '<li>' +
+  '<div class ="list-left">' + 
+  //link the thumbnail and also have new page open in a new window//
+  '<a target="_blank" href="'+url+'"><img src="'+image+'"></a>' +
+  '</div>' +
+  '<div class="list-right">' +
+  '<a target="_blank" href="'+url+'"><h3>'+title+'</h3></a>' +
+  '<p>' +description+'</p>' +
+  '</div>' +
+  '</li>' +
+  '<div class="clearfix"></div>' +
+  '';
+
+  return output;
 }
 
 //create buttons to go next and before
